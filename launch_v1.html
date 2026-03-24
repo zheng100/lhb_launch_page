@@ -332,6 +332,14 @@
   <div class="launched-msg" id="launched-msg">🎉 正式上线！</div>
   <div class="launched-sub" id="launched-sub">江泰山东 · 微信小程序 v1 · 2026.3.31</div>
 
+  <div id="qr-section" style="display:none; margin-top: 28px;">
+    <div style="font-size: 13px; color: var(--text2); margin-bottom: 14px;">扫码立即体验</div>
+    <div style="display: inline-block; background: #ffffff; border-radius: var(--radius); border: 0.5px solid var(--border); padding: 16px;">
+      <img src="qrcode.jpg" alt="小程序二维码" style="width: 160px; height: 160px; display: block; border-radius: 4px;">
+    </div>
+    <div style="font-size: 11px; color: var(--text3); margin-top: 12px;">微信扫一扫 · 江泰鲁惠保</div>
+  </div>
+
   <div class="footer">JIANGTAI INSURANCE BROKERAGE · SHANDONG</div>
 </div>
 
@@ -375,6 +383,7 @@
     document.getElementById('pre-launch').style.display='none';
     document.getElementById('launched-msg').style.display='block';
     document.getElementById('launched-sub').style.display='block';
+    document.getElementById('qr-section').style.display='block';
     resize();
     running=true;
     particles=[];
