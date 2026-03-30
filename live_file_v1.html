@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<title>江泰鲁惠保 v1 · 正式上线</title>
+<meta property="og:title" content="江泰鲁惠保 v1 · 正式上线">
+<meta property="og:description" content="2026 年 3 月 31 日，江泰鲁惠保正式上线。">
+<meta property="og:image" content="https://zheng100.github.io/lhb_launch_page/og_cover.png">
+<meta property="og:url" content="https://zheng100.github.io/lhb_launch_page/launch.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zheng100.github.io/lhb_launch_page/og_cover.png">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  :root {
+    --bg: #ffffff;
+    --bg2: #f5f4f0;
+    --bg3: #eeede8;
+    --text: #1a1a18;
+    --text2: #6b6a66;
+    --text3: #a09f9b;
+    --border: rgba(0,0,0,0.1);
+    --border2: rgba(0,0,0,0.18);
+    --blue: #185FA5;
+    --blue-light: #e6f1fb;
+    --green: #3B6D11;
+    --radius: 14px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1a;
+      --bg2: #262624;
+      --bg3: #2e2e2c;
+      --text: #f0efe9;
+      --text2: #9b9a96;
+      --text3: #66665f;
+      --border: rgba(255,255,255,0.1);
+      --border2: rgba(255,255,255,0.18);
+      --blue-light: #0c2840;
+    }
+  }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 48px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text3);
+    border: 0.5px solid var(--border2);
+    border-radius: 100px;
+    padding: 5px 14px;
+    margin-bottom: 28px;
+  }
+
+  .headline {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+    background: linear-gradient(120deg, #1D9E75 0%, #185FA5 50%, #7F77DD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .headline-sub {
+    font-size: 20px;
+    font-weight: 500;
+    background: linear-gradient(120deg, #BA7517 0%, #D85A30 60%, #D4537E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .date-tag {
+    font-size: 13px;
+    color: var(--blue);
+    font-weight: 500;
+    margin-bottom: 36px;
+  }
+
+  /* Countdown */
+  .cd-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .cd-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 14px 12px;
+    min-width: 68px;
+  }
+
+  .cd-num {
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+  }
+
+  .cd-label {
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 6px;
+  }
+
+  .cd-sep {
+    font-size: 26px;
+    color: var(--text3);
+    padding-bottom: 22px;
+    font-weight: 300;
+  }
+
+  /* Milestones */
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text3);
+    text-align: left;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .milestones {
+    text-align: left;
+    margin: 0 auto 36px;
+    max-width: 360px;
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 4px 20px;
+  }
+
+  .ms {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .ms:last-child { border-bottom: none; }
+
+  .ms-dot-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .ms-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .ms-dot.done { background: var(--green); }
+  .ms-dot.active { background: var(--blue); width: 10px; height: 10px; box-shadow: 0 0 0 3px var(--blue-light); margin-top: -1px; }
+  .ms-dot.next { background: var(--bg3); border: 1.5px solid var(--border2); }
+
+  .ms-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  .ms-title.done { color: var(--text3); text-decoration: line-through; font-weight: 400; }
+  .ms-title.active { color: var(--text); }
+  .ms-title.next { color: var(--text3); font-weight: 400; }
+
+  .ms-date {
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 2px;
+  }
+
+  .ms-date.active { color: var(--blue); }
+
+  /* Fire button */
+  .btn-wrap { margin-bottom: 10px; }
+
+  .fire-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--text);
+    color: var(--bg);
+    border: none;
+    border-radius: 100px;
+    padding: 13px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity 0.15s, transform 0.1s;
+    letter-spacing: 0.01em;
+  }
+
+  .fire-btn:active { transform: scale(0.96); opacity: 0.85; }
+
+  .hint {
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 8px;
+  }
+
+  /* Launched state */
+  .launched-msg {
+    display: none;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .launched-sub {
+    display: none;
+    font-size: 12px;
+    color: var(--text3);
+    margin-bottom: 24px;
+  }
+
+  /* Confetti */
+  #confetti {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 48px;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.04em;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="confetti"></canvas>
+
+<div class="wrap">
+
+  <div class="badge">江泰保险经纪 · 山东分公司</div>
+
+  <div class="headline">江泰鲁惠保<br><span class="headline-sub">微信小程序 v1</span></div>
+  <div class="date-tag">正式上线 · 2026 年 3 月 31 日</div>
+
+  <div class="cd-row" id="cd-row">
+    <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-label">天</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-label">时</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-box"><span class="cd-num" id="cd-m">--</span><span class="cd-label">分</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-label">秒</span></div>
+  </div>
+
+  <div class="milestones">
+    <div class="ms">
+      <div class="ms-dot-wrap"><div class="ms-dot done"></div></div>
+      <div>
+        <div class="ms-title done">需求确认 & 产品规划</div>
+        <div class="ms-date">2025 Q3</div>
+      </div>
+    </div>
+    <div class="ms">
+      <div class="ms-dot-wrap"><div class="ms-dot done"></div></div>
+      <div>
+        <div class="ms-title done">UI 设计调整</div>
+        <div class="ms-date">2026 Q1</div>
+      </div>
+    </div>
+    <div class="ms">
+      <div class="ms-dot-wrap"><div class="ms-dot done"></div></div>
+      <div>
+        <div class="ms-title done">软上线</div>
+        <div class="ms-date">2026 年 2 月 21 日</div>
+      </div>
+    </div>
+    <div class="ms">
+      <div class="ms-dot-wrap"><div class="ms-dot active"></div></div>
+      <div>
+        <div class="ms-title active">v1 正式上线</div>
+        <div class="ms-date active">2026 年 3 月 31 日</div>
+      </div>
+    </div>
+    <div class="ms">
+      <div class="ms-dot-wrap"><div class="ms-dot next"></div></div>
+      <div>
+        <div class="ms-title next">v2 计划调整</div>
+        <div class="ms-date">2026 年 6 月 30 日</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="pre-launch">
+    <div class="btn-wrap">
+      <button class="fire-btn" onclick="triggerLaunch()">
+        <span>🚀</span><span>模拟点火</span>
+      </button>
+    </div>
+    <div class="hint">提前感受发布那一刻</div>
+  </div>
+
+  <div class="launched-msg" id="launched-msg">🎉 正式上线！</div>
+  <div class="launched-sub" id="launched-sub">江泰山东 · 江泰鲁惠保 v1 · 2026.3.31</div>
+
+  <div id="qr-section" style="display:none; margin-top: 28px;">
+    <div style="font-size: 13px; color: var(--text2); margin-bottom: 14px;">扫码立即体验</div>
+    <div style="display: inline-block; background: #ffffff; border-radius: var(--radius); border: 0.5px solid var(--border); padding: 16px;">
+      <img src="lhb_qr_code.jpg" alt="江泰鲁惠保二维码" style="width: 160px; height: 160px; display: block; border-radius: 4px;">
+    </div>
+    <div style="font-size: 11px; color: var(--text3); margin-top: 12px;">微信扫一扫 · 立即体验江泰鲁惠保</div>
+  </div>
+
+  <div class="footer">JIANGTAI INSURANCE BROKERAGE · SHANDONG</div>
+</div>
+
+<script>
+  var target = new Date('2026-03-31T11:08:00+08:00').getTime();
+
+  function pad(n){ return ('0'+Math.floor(n)).slice(-2); }
+
+  function tick(){
+    var now = Date.now();
+    var diff = target - now;
+    if(diff <= 0){
+      document.getElementById('cd-d').textContent='00';
+      document.getElementById('cd-h').textContent='00';
+      document.getElementById('cd-m').textContent='00';
+      document.getElementById('cd-s').textContent='00';
+      return;
+    }
+    var d=Math.floor(diff/86400000);
+    var h=Math.floor((diff%86400000)/3600000);
+    var m=Math.floor((diff%3600000)/60000);
+    var s=Math.floor((diff%60000)/1000);
+    document.getElementById('cd-d').textContent=pad(d);
+    document.getElementById('cd-h').textContent=pad(h);
+    document.getElementById('cd-m').textContent=pad(m);
+    document.getElementById('cd-s').textContent=pad(s);
+  }
+
+  tick();
+  setInterval(tick,1000);
+
+  /* Confetti */
+  var canvas=document.getElementById('confetti');
+  var ctx=canvas.getContext('2d');
+  var particles=[], running=false;
+  var colors=['#378ADD','#1D9E75','#BA7517','#D4537E','#7F77DD','#D85A30','#E24B4A'];
+
+  function resize(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight; }
+
+  function triggerLaunch(){
+    document.getElementById('pre-launch').style.display='none';
+    document.getElementById('launched-msg').style.display='block';
+    document.getElementById('launched-sub').style.display='block';
+    document.getElementById('qr-section').style.display='block';
+    resize();
+    running=true;
+    particles=[];
+    for(var i=0;i<160;i++){
+      particles.push({
+        x:Math.random()*canvas.width,
+        y:-10-Math.random()*80,
+        w:5+Math.random()*7,
+        h:3+Math.random()*5,
+        color:colors[Math.floor(Math.random()*colors.length)],
+        rot:Math.random()*360,
+        vx:(Math.random()-0.5)*4,
+        vy:2.5+Math.random()*3.5,
+        vrot:(Math.random()-0.5)*10,
+        alpha:1
+      });
+    }
+    loop();
+    setTimeout(function(){ running=false; },5000);
+  }
+
+  function loop(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(var i=0;i<particles.length;i++){
+      var p=particles[i];
+      p.x+=p.vx; p.y+=p.vy; p.rot+=p.vrot;
+      if(p.y>canvas.height*0.7) p.alpha=Math.max(0,p.alpha-0.03);
+      ctx.save();
+      ctx.globalAlpha=p.alpha;
+      ctx.translate(p.x,p.y);
+      ctx.rotate(p.rot*Math.PI/180);
+      ctx.fillStyle=p.color;
+      ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+      ctx.restore();
+    }
+    particles=particles.filter(function(p){ return p.y<canvas.height+20 && p.alpha>0; });
+    if(running || particles.length>0) requestAnimationFrame(loop);
+    else ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+</script>
+</body>
+</html>
